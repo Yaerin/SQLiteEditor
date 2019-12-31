@@ -258,7 +258,7 @@ public class TableActivity extends Activity {
         String key = c.getString(c.getColumnIndex(primaryKey));
         String value = c.getString(c.getColumnIndex(name));
         c.close();
-        if (value.equals(newValue)) {
+        if (!TextUtils.isEmpty(value) && value.equals(newValue)) {
             return null;
         } else {
             mTableData.getData()[col][row] = newValue;
